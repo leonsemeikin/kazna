@@ -88,7 +88,10 @@ JQ(document).ready(function () {
             link = 'http://sm-sue.fsfk.local/sd';
             open_in_new_window(window.event, link, 'form', 1280, 1024);
         });
-    } catch { console.log("Что-то пошло не так") }
+    } catch (e) { 
+        console.error("Что-то пошло не так");
+        console.error(e.message);
+}
 });
 
 try {
@@ -99,6 +102,7 @@ try {
     JQ('#acf_emailOperator input').val(jsonParse["emailOperator"]);
     JQ('#acf_innOperator input').val('7709895509');
     document.getElementById('b1').click();
-} catch {
-    console.log("Что-то пошло не так")
+} catch (e) {
+    console.error("Что-то пошло не так");
+    console.error(e.message);
 }
